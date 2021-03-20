@@ -1,0 +1,75 @@
+body{
+	background-color:#f0f5f5;
+	font-family: 'roboto',sans-serif;
+}
+
+ h2{
+	color:white;
+	font-family: "Lucida Console","Courier New", monospace;
+ }	
+ 
+ .home_link{
+	font-size:20px;
+	text-align: center;
+	color:FloralWhite;
+	padding:10px;
+	text-decoration:none;
+}
+
+.home_link:hover{
+	font-size:20px;
+	text-align: center;
+	color:black;
+	background-color:white;
+	padding:10px;
+}
+
+.home_link1{
+	font-size:15px;
+	text-align: center;
+	color:black;
+	padding: 10px;
+    margin-bottom: 0px;
+	text-decoration:none;
+}
+
+.icon{
+	margin-top:15px;
+}
+
+.slideshow{
+	margin-top:0px;
+	background-size: cover;
+	background-position: center; 
+}
+
+footer{
+  text-align: center;
+  padding: 2px;
+  background-color: #000066;
+  color: white;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  padding-left: 100px;
+}
+
+.top-bar-car{
+	background-color:#2a6aa9;
+}
+ 
+.home-slide .carousel-control-next, .carousel-control-prev{
+	opacity:0 !important;
+}
+
+.car_dropdown{
+	color: #212529 !important;
+    background-color: transparent !important;
+    border-color: transparent !important;
+	font-size:15px;
+	font-weight:500 !important;
+}

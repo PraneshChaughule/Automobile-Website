@@ -1,0 +1,33 @@
+.container 
+{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color:#4d4dff;
+}
+
+.home-link{
+	font-size:13px;
+	color:red !important;
+	text-align:center;
+}
+.row{
+	line-height:0;
+}
+
+li
+{
+  float: left
+}
+
+/*
+li a 
+{
+  display: block;
+  color: white;
+  text-align: center;
+  font-size:30px;
+  padding: 20px 50px;
+  text-decoration: none;
+}*/

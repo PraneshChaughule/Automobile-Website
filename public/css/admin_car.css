@@ -1,0 +1,34 @@
+
+.heading{
+	border-style:solid;
+	border-color:#ffad99 white;
+}	
+
+.cform{
+	border-style: solid;
+	border-color: #cca300;
+	margin-bottom:5%;
+}
+
+.ad_car{
+	padding:5px 10px 5px 50px;
+}
+/*  for label */
+.adsscar{
+	margin:0 0 5px -10px;
+}
+
+input[type=text],textarea{
+	width:95%;
+}
+
+#save{
+	width: 10%;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    background: #ffd11a;
+    color: #fff;
+    line-height: 22px;
+	margin-bottom:5px;
+}

@@ -1,0 +1,56 @@
+.register
+{  
+		width:500px;
+		overflow:hidden;
+        padding: 30px;
+  		position: absolute;
+		top: 50%;
+		left:50%;
+		transform: translate(-50%, -50%);
+        border-radius: 15px ; 
+		background:#fff;		
+}  
+ 
+input[type=text], input[type=password],textarea
+{  
+  width: 95%;  
+  height:35px;
+  padding: 5px;     
+  border: 1px solid #595959;  
+  background: #f1f1f1; 
+}
+
+input[type=button]
+{
+	display:block;
+	border-radius:30px;
+	
+}
+ 
+#sign
+{
+	width:50%;
+	height:30px;
+	border:none;
+	border-radius:5px;
+    background: #4d4dff;
+    color: #fff;
+    line-height: 22px;
+}
+
+.reg-body{
+	background-color: #f0e6ff;
+}
+.creg-row{
+	margin:4% 0 4% 0 !important;
+}
+
+.creg_label{
+	margin: 0 0 2% -3%;
+}
+
+label.error{
+	color:red;
+	font-size:13px;
+	margin:2px 0 0 -10px;
+}
