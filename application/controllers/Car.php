@@ -28,7 +28,7 @@ class Car extends CI_Controller {
 	
 	public function index()
 	{
-		$this->load->view('admin_car');
+		$this->load->view('home');
 	}
 	/*public function index()
 	{
