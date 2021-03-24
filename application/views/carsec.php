@@ -15,36 +15,36 @@
 					<div class="col-sm-4" style="background-color:white;width:26%;border-radius:5px;box-shadow:1px 2px 2px 1px rgba(0,0,0,0.2);">
 						<label><strong> All Brands </strong></label>
 						<select name="brand" id="common">
-							<option> Maruti Suzuki </option>
-							<option> Honda </option>
-							<option> Tata </option>
-							<option> Hyundai </option>
-							<option> Mahindra </option>
-							<option> Ford </option>
-							<option> Toyota </option>
-							<option> BMW </option>
-							<option> Mercedes </option>
+							<option value="b1"> Maruti Suzuki </option>
+							<option value="b2"> Honda </option>
+							<option value="b3"> Tata </option>
+							<option value="b4"> Hyundai </option>
+							<option value="b5"> Mahindra </option>
+							<option value="b6"> Ford </option>
+							<option value="b7"> Toyota </option>
+							<option value="b8"> BMW </option>
+							<option value="b9"> Mercedes </option>
 						</select>
 					</div>
 					<div class="col-sm-4" style="background-color:white;width:26%;border-radius:5px;box-shadow:1px 2px 2px 1px rgba(0,0,0,0.2);">
 						<label><strong> By Budget </strong></label>
 						<select name="price" id="common">
-							<option> Under 5Lakhs </option>
-							<option> Under 7Lakhs </option>
-							<option> Under 10Lakhs </option>
-							<option> Under 13Lakhs </option>
-							<option> Under 16Lakhs </option>
-							<option> Between 16-30Lakh </option>
+							<option value="p1"> Under 5Lakhs </option>
+							<option value="p2"> Under 7Lakhs </option>
+							<option value="p3"> Under 10Lakhs </option>
+							<option value="p4"> Under 13Lakhs </option>
+							<option value="p5"> Under 16Lakhs </option>
+							<option value="p6"> Between 16-30Lakh </option>
 						</select>
 					</div>
 					<div class="col-sm-4" style="background-color:white;width:26%;border-radius:5px;box-shadow:1px 2px 2px 1px rgba(0,0,0,0.2);">
 						<label><strong>Car Body Type </strong></label>
 						<select name="body" id="common">
-							<option> SUV </option>
-							<option> Sedan </option>
-							<option> Hatchback </option>
-							<option> MUV </option>
-							<option> Minivan </option>
+							<option value="bd1" > SUV </option>
+							<option value="bd2"> Sedan </option>
+							<option value="bd3"> Hatchback </option>
+							<option value="bd4"> MUV </option>
+							<option value="bd5"> Minivan </option>
 						</select>
 					</div>
 				</div>	
@@ -56,12 +56,12 @@
 						<p> 2016Audi A8 L 50 TDI Quattro  </p>
 						<p><b> Rs. 62.5 Lakh* </b></p>
 					</div>
-					<div class="col-sm-4 cardetails" carname="kuyhsgd">
+					<div class="col-sm-4 cardetails" carname="<?php echo $cars[0]->cname; ?>" >
 						<img src="<?=public_path();?>image/Used/BMW6S.jpg" width="350" height="250">
 						<p> 2019 BMW 6 Series GT 630d   </p>
 						<p><b> Rs. 62.5 Lakh* </b></p>
 					</div>
-					<div class="col-sm-4 cardetails" carname="maruti">
+					<div class="col-sm-4 cardetails" carname="<?php echo $cars[0]->cname; ?>">
 						<img src="<?=public_path();?>image/Used/ToyotaFortuner8.jpg" width="350" height="250">
 						<p> 2018 Toyota Fortuner 2.8 2WD   </p>
 						<p><b> Rs. 31.95 Lakh* </b></p>
@@ -122,13 +122,14 @@
 					<div class="col-sm-6">
 						<h4> Specification </h4>
 						<ul><li> Model: <span class="model"></span></li>
-							<li> Colour:</li>
-							<li> Engine Displacement(cc):</li>
-							<li> Tank Cpacity:</li>
-							<li> Fuel Type:</li>
-							<li> Ex-showroom Prize:</li>
-							<li> RTO:</li>
-							<li> Insurance:</li>
+							<li> Colour: <span class="colour"></span></li>
+							<li> Engine Displacement(cc): <span class="cc"></span></li>
+							<li> Milege:  <span class="milege"></span></li>
+							<li> Tank Cpacity: <span class="capacity"></span></li>
+							<li> Fuel Type: <span class="fuel"></span></li>
+							<li> Ex-showroom Prize: <span class="ex"></span></li>
+							<li> RTO: <span class="rto"></span></li>
+							<li> Insurance: <span class="insurance"></span></li>
 							<li> On-Road Prize:</li>
 							<button type="button" class="btn btn-primary" style="width:80%;margin-top:15px;"> Buy Now </button>	
 					</div>
@@ -158,7 +159,15 @@
 					var data = JSON.parse(res);
 					//alert(data['cname']);
 					$('#exampleModal').modal('show');  
-					$('.model').text(data['cmodel']);
+					$('.model').text(data['cmodel']); 
+					$('.colour').text(data['ccolour']); 
+					$('.cc').text(data['edcc']); 
+					$('.milege').text(data['cmilege']); 
+					$('.capacity').text(data['tcapacity']); 
+					$('.fuel').text(data['ftype']); 
+					$('.ex').text(data['exprize']); 
+					$('.rto').text(data['crto']);
+					$('.insurance').text(data['cinsu']);
                 },
             });
            }
