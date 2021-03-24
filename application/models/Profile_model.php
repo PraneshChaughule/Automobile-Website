@@ -75,9 +75,9 @@ class Profile_model extends CI_Model{
 			return false;
 		}
 	}
-	public function insertInfo($data)
+	public function insertInfo($data, $filename)
 	{	
-		$this->db->insert('carinfo', $data);
+		$this->db->insert('carinfo', $data, $filename);
 	}
 	
 	
@@ -149,4 +149,51 @@ class Profile_model extends CI_Model{
 
 		return $data;
 	}
+	/*function upload_org_filename($input = "", $folder="default", $allowd="", $thumb="")
+  	{
+	    $this->load->library('upload');
+	    $this->load->library('image_lib');
+	    $structure = DOC_ROOT_UPLOAD_PATH;
+	    $folders = explode("/", $folder);
+	    foreach($folders as $dir)
+	    {
+		    if($dir != "")
+			{
+			     if (!file_exists($structure.$dir))
+				{
+				      mkdir($structure.$dir, 0777, true);
+				      chmod($structure.$dir, 0777);
+			     }
+			     else{
+				      chmod($structure.$dir, 0777);
+			     }
+			     $structure .= $dir."/";
+			     $folder = $dir;
+	      	}
+		}
+   		if (!file_exists($structure.'thumbs'))
+		{
+		    mkdir($structure.'thumbs', 0777, true);
+		    chmod($structure.'thumbs', 0777);
+		}
+		 else{
+			 chmod($structure.'thumbs', 0777);
+		}
+		   $config['upload_path'] = $structure;
+		   $config['allowed_types'] = $allowd;
+		   $config['max_size'] = 20048;   //$config['file_name'] = date('YmdHis').rand(0,999);
+		   $this->upload->initialize($config);
+		   if($this->upload->do_upload($input))
+		   {
+			    $data = $this->upload->data();
+			    if($thumb != "" && isset($thumb['width']) && isset($thumb['height']))
+			    {
+				  $thumbconfig = array(   'image_library' => 'gd2',   'source_image' => $data ['full_path'],   'new_image' => $data ['file_path']."thumbs",   'maintain_ratio' => TRUE,   'create_thumb' => TRUE,   'thumb_marker' => "",   'width' => $thumb['width'],   'height' => $thumb['height']  );
+				  $this->image_lib->initialize($thumbconfig);
+				  if(!$this->image_lib->resize())
+				  {   $error = $this->image_lib->display_errors();   //print_r($error);  }    }    return $data;   }   else  {   $error = $this->upload->display_errors();
+				   //print_r($error); 
+				   return false;
+				  }
+  				return false;*/
 }

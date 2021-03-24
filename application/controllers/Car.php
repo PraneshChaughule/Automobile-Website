@@ -26,16 +26,16 @@ class Car extends CI_Controller {
 		$this->user_session=$this->session->userdata('user_session');
 	}
 	
-	public function index()
-	{
-		$this->load->view('home');
-	}
 	/*public function index()
+	{
+		$this->load->view('admin_car');
+	}*/
+	public function index()
 	{
 		$data = $this->session->userdata('user_session');
 		$data['cars'] = $this->Profile_model->selectData('carinfo','*');
-		$this->load->view('carsec',$data);
-	}*/
+		$this->load->view('home',$data);
+	}
 	
 	public function get_cardetails()
 	{
@@ -171,14 +171,14 @@ class Car extends CI_Controller {
 		}	
 		
 	}
-	 public function validation()  
+	 /*public function validation()  
     { 
         if ($this->Profile_model->logInfo()){   
 			echo 'Successfully logged In';
         } else {  
 			echo 'Incorrect username/password.';
         }  
-    }  
+    } */ 
 	
 	/* Insert register data */
 	public function insert_userdata(){
@@ -209,19 +209,29 @@ class Car extends CI_Controller {
 		//print_r($user_info); exit();
 	}
 	
-	/* Inserting new car info */
+	/* Inserting new car info in db*/
 	
 	public function insert_car(){
-		$car_id=0;
+		/*$car_id=0;
 		$data = array();
 		$data = $_POST;
 		$data['car_id'] = $car_id;
 		//print_r($data); exit();
 		$this->Profile_model->insertInfo($data);
-		//$get_admin_id = $this->Profile_model->insertData('carinfo',$data);
-	}
+		//$get_admin_id = $this->Profile_model->insertData('carinfo',$data);*/
+		if (isset($_POST['save'])) {
+			//$data = array();
+			//$data = $_POST;
+			$filename = $_FILES["car_image"]["name"];   
+			$tempname = $_FILES["car_image"]["tmp_name"];
+			$folder = "DB_Image/".$filename; 
+			move_uploaded_file($tempname, $folder);
+			// Get all the submitted data from the form  
+			$this->Profile_model->insertInfo($data, $filename);
+		} 
+	}  
 	
-	/* Inserting used car info */
+	/* Inserting used car info in db*/
 	public function insert_used(){
 		$used_id=0;
 		$data = array();
@@ -253,4 +263,5 @@ class Car extends CI_Controller {
 
 		redirect('https://'.$_SERVER['HTTP_HOST'].'/index.php/Car');
 	}
+	/*$profile_image=$this->Profile_model->upload_org_filename('bus_company_logo','company_logos/'.$id,$allowd="jpg|jpeg|png",array('width'=>200,'height'=>300));*/
 }
