@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Signup extends CI_Controller {
+require ("common/Index_Controller.php");
+class Signup extends Index_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -17,7 +18,17 @@ class Signup extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
+	function __construct(){
+
+		parent::__construct();
+		$this->load->model('Profile_model');
+
+		is_login();
+
+		$this->user_session = $this->session->userdata('user_session');
+	}
+	
+	public function sign()
 	{
 		$this->load->view('reg');
 	}

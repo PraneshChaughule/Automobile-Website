@@ -31,7 +31,7 @@
 					<input type="submit" name="log" id="log" value="Log In">       
 				</div>
 				<div class="row clog-row">			
-					<label id="label">  Don't have an account? <a href ="<?php echo base_url(); ?>index.php/Car/signup"> Sign up </a>    
+					<label id="label">  Don't have an account? <a href ="<?php echo base_url(); ?>index.php/Signup/sign"> Sign up </a>    
 				</div>	
 				</form>
 			</div>

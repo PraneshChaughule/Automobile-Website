@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
-class Car extends CI_Controller {
+require ("common/Index_Controller.php");
+class Car extends Index_Controller {
 
 	/**
 	 * Index Page for this controller.
