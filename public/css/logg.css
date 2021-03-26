@@ -28,7 +28,7 @@ input[type=text], input[type=password],textarea
     background: #f1f1f1;
 }
 
-#log{
+#user_log{
 	width: 40%;
     height: 35px;
     border: none;

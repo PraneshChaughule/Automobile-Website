@@ -50,9 +50,25 @@
 	box-shadow:3px 2px 2px 1px rgba(0,0,0,0.2);
 }
 
+/* car details modal view */
 .modal_design{
 	margin-top:10%;
 }
 .modal-backdrop.show {
     opacity: 0.3 !important;
+}
+
+/* Payment modal design view*/
+
+.container-fluid label{
+	padding:0 0 5px 3px;
+}
+input[type=text], input[type=tel],textarea
+{
+	width: 100%;
+    height: 35px;
+    border: 1px solid #595959;
+    padding-left: 5px;
+    background: #f1f1f1;
+	border-radius:5px;
 }

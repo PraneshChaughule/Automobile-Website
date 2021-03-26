@@ -18,7 +18,7 @@
 					<h5 style="font-family: 'roboto',sans-serif;color:black;text-align:center;"> Automobile Selling & Services </h5>
 					<hr>
 				</div>	
-				<form class="border-split-form" id="user_login" name="user_login" method="post" action="<?php echo base_url();?>index.php/Car/insert_userlogin" enctype="multipart/form-data">
+				<form class="border-split-form" id="user_login" name="user_login" method="post" action="<?php echo base_url();?>index.php/Signin/insert_userlogin" enctype="multipart/form-data">
 				<div class="row clog-row">
 					<label id="name_label" class="clog-label"><b>User Name</b></label>    
 					<input type="text" name="uname" id="uname" placeholder="Email Address" value=""/>    
@@ -28,7 +28,7 @@
 					<input type="Password" name="user_pass" id="user_pass" placeholder="Password"/>    
 				</div>
 				<div class="row clog-row">			
-					<input type="submit" name="log" id="log" value="Log In">       
+					<input type="submit" name="user_log" id="user_log" value="Log In">       
 				</div>
 				<div class="row clog-row">			
 					<label id="label">  Don't have an account? <a href ="<?php echo base_url(); ?>index.php/Signup/sign"> Sign up </a>    

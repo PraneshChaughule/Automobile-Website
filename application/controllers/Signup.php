@@ -32,4 +32,26 @@ class Signup extends Index_Controller {
 	{
 		$this->load->view('reg');
 	}
+	
+	/* Insert register data */
+	public function insert_userdata(){
+		$reg_id = 0;
+		$bus_id = 0;
+		
+		$register_data = array();
+		$register_data = $_POST;	
+		$register_data['bus_id'] = $bus_id;
+		$register_data['reg_id'] = $reg_id;
+		$exist_email = $this->Profile_model->isUnique('registration','email_id',$register_data['email_id']);
+		//print_r($exist_email);
+		if($exist_email==TRUE){
+		$get_admin_id = $this->Profile_model->insertData('registration',$register_data);
+		$this->session->set_flashdata('success',"Profile has been created successfully");
+		$register_data['success'] = 'Yes';
+		//print_r($register_data);exit();
+		$this->load->view('home',$register_data);
+		}else{
+			exit();
+		}
+	}
 }

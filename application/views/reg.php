@@ -17,7 +17,7 @@
 					<center><h3>Registration Page</h3></center>   
 					<hr>
 				</div>	
-				<form id="RegForm" name="RegForm" method="post" action="<?php echo base_url();?>index.php/Car/insert_userdata" enctype="multipart/form-data">    
+				<form id="RegForm" name="RegForm" method="post" action="<?php echo base_url();?>index.php/Signup/insert_userdata" enctype="multipart/form-data">    
 				<div class="row creg-row">	
 					<label id="full_label" class="creg_label"><b>Full Name</b></label>   
 					<input type="text" name="username" id="username" placeholder="Enter name">    
@@ -28,7 +28,7 @@
 				</div>
 				<div class="row creg-row">	
 					<label id="contact_label" class="creg_label"><b>Mobile no.</b></label>  
-					<input type="text" name="contact" id="contact" placeholder="Enter mobile no."> 
+					<input type="tel" name="contact" id="contact" placeholder="Enter mobile no."> 
 				</div>
 				<div class="row creg-row">	
 					<label id="pass_label" class="creg_label"><b>Password</b></label> 

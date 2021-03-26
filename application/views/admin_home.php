@@ -12,7 +12,7 @@
 			<center><a class="adlink" href="<?php echo base_url(); ?>index.php/Car/admin_car"> Car </a></center>
 		</div>
 		<div class="col-sm-2">
-			<center><a class="adlink" href="<?php echo base_url(); ?>index.php/Car/home"> Used Car </a></center>
+			<center><a class="adlink" href="<?php echo base_url(); ?>index.php/Car/admin_used"> Used Car </a></center>
 		</div>
 		<div class="col-sm-2">
 			<center><a class="adlink" href="<?php echo base_url(); ?>index.php/Car/home"> Rental Car </a></center>

@@ -16,7 +16,7 @@
 	<div class="container cform">
 		<div class="row">
 			<div class="col-sm-12">
-				<form id="car_info" name="car_info" method="post" action="<?php echo base_url();?>index.php/Car/insert_car">
+				<form id="car_info" name="car_info" method="post" action="<?php echo base_url();?>index.php/Car/insert_car" enctype="multipart/form-data">
 				<div class="row ad_car" style="padding-top:5%;">
 					<label id="cname_label" class="adsscar"> Car Name: </label>   
 					<input type="text" name="cname" id="cname"> 

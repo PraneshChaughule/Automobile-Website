@@ -17,21 +17,10 @@
 			<div class="col-sm-8" style="padding: 1.8% 0 0px 0%;">
 				<h4 style="font-family: 'roboto',sans-serif;color:white;"> Automobile Selling & Services </h4>
 			</div>
-			<?php if(isset($status)){ ?>
-				<?php if($status == 'Active') { ?>
-					<div class="col-sm-2" style="padding: 1.5% 0 0 6%;">
-						<a class="home_link" href="<?php echo base_url(); ?>index.php/Signin/logout"> Logout <?php //echo $username; ?> </a>
-					</div>
-				<?php } else { ?>
-					<div class="col-sm-2" style="padding: 1.5% 0 0 6%;">
-						<a class="home_link" href="<?php echo base_url(); ?>index.php/Signin/user_log"> Login </a>
-					</div>
-				<?php } ?>
-			<?php } else { ?>
-				<div class="col-sm-2" style="padding: 1.5% 0 0 6%;">
-					<a class="home_link" href="<?php echo base_url(); ?>index.php/Signin/user_log"> Login </a>
-				</div>
-			<?php } ?>	
+			<div class="col-sm-2" style="padding: 1.5% 0 0 0.5%;margin-bottom:5px;">
+				<!--a class="home_link" href="<?php //echo base_url(); ?>index.php/Signin/logout"--> 
+				<img src="<?=public_path();?>image/profilee.png" class="iconn" width="70" height="50"><?php //echo $username; ?> </a>
+			</div>
 		</div>	
 		<div class="col-sm-12 d-flex justify-content-bold" style="background-color:#cce6ff">
 			<div class="col-sm-1">
@@ -43,11 +32,9 @@
 				<center><a class="home_link1" href="<?php echo base_url(); ?>index.php/Car_con/carsec"><strong> CAR </strong><a></center>				
 			</div>
 			<div class="col-sm-2">
-				<!--img src="<?=public_path();?>image/used-car.png" class="icon" width="35" height="35"-->
 				<center><a class="home_link1" href="<?php echo base_url(); ?>index.php/Car/used"><strong> USED CAR </strong><a></center>
 			</div>
 			<div class="col-sm-2">
-					<!--img src="<?=public_path();?>image/car-rental.png" class="icon" width="35" height="35"--> 
 				<center><a class="home_link1" href="<?php echo base_url(); ?>index.php/Car/rent"><strong> RENTAL CAR </strong><a></center>
 			</div>
 			<div class="col-sm-2">
