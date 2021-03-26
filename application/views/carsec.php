@@ -131,19 +131,50 @@
 							<li> RTO: <span class="rto"></span></li>
 							<li> Insurance: <span class="insurance"></span></li>
 							<li> On-Road Prize:</li>
-							<button type="button" class="btn btn-primary" style="width:80%;margin-top:15px;"> Buy Now </button>	
+							<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#paymt" action="<?php echo base_url();?>index.php/Car_con/check" style="width:80%;margin-top:15px;"> Buy Now </button>	
 					</div>
 				</div>
 			  </div>
 		  </div>
-		  <!--div class="modal-footer">
-			<button type="button" class="btn btn-primary" style="width:80%;margin-top:15px;"> Buy Now </button>
-			<!--button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-			<button type="button" class="btn btn-primary">Save changes</button-->
-		  </div>
 		</div>
 	  </div>
 	</div>
+	<!-- Modal -->
+<div class="modal fade" id="paymt" tabindex="-1" aria-labelledby="paymodal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="paymodal"><center>Payment Details</center></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+		<div class="container-fluid">
+			<div class="row">
+				<label for="name"> NAME ON THE CARD </label> 
+				<input type="text" name="cardname" id="cardname" placeholder="Card Owner Name"> 
+			</div>
+			<div class="row"> 
+				<label for="name"> CARD NUMBER</label>
+				<input type="teL" name="cardno" id="cardno" placeholder="Valid Card Number">
+			</div>
+			<div class="row">
+				<div class="col-md"> 
+					<label for="name"> EXPIRATION DATE </label>
+					<input type="tel" name="exdate" id="exdate" placeholder="MM/YY">
+				</div>
+				<div class="col-md"> 
+					<label for="name"> CVV CODE </label>
+					<input type="tel" name="cvc" id="cvc" placeholder="CVC">
+				</div>
+			</div>
+		</div>
+      </div>
+      <div class="modal-footer" style="display:flex;justify-content:center;">
+        <center> <button type="button" class="btn btn-primary" style="padding-left:15px;">Confirm Payment</button></center>
+      </div>
+    </div>
+  </div>
+</div>
 <?php include 'footer.php';?>	
 </body>
 <script>
@@ -152,7 +183,7 @@
         var carname = $(this).attr('carname');
             if(carname!=''){
                 $.ajax({
-                  url:base_url+'index.php/Car/get_cardetails',
+                  url:base_url+'index.php/Car_con/get_cardetails',
                   type:"POST",
                   data:{'carname':carname},
                   success:function(res){
