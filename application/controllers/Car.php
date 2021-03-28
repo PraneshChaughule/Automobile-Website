@@ -99,13 +99,14 @@ class Car extends Index_Controller {
 		$car_id=0;
 		$data = array();
 		$data = $_POST;
-		$directoryr = "DB_Image/";
-		$filename = $_FILES["car_image"]["name"];
-		$tempname = $_FILES["car_image"]["tmp_name"];
-		$folder = $directoryr.$filename;
+		$info = pathinfo($_FILES['car_image']['name']);
+		$ext = $info['extension']; // get the extension of the file
+		$fname = $info['filename'];
+		$newname = $fname.'.'.$ext; 
+		$target = 'DB_Image/'.$newname;
+		move_uploaded_file( $_FILES['car_image']['tmp_name'], $target);
 		//print_r($filename);
 		if (isset($_POST['submit'])) { 
-			move_uploaded_file($tempname, $folder);
 			// Get all the submitted data from the form 
 			$this->Profile_model->insertInfo($data, $filename);
 		} 
