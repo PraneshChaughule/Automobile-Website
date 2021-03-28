@@ -26,6 +26,10 @@
 					<input type="text" name="cmodel" id="cmodel"> 
 				</div>
 				<div class="row ad_car">
+					<label id="cmodel_label" class="adsscar"> Car Image: </label>   
+					<input type="file" name="cimg" id="cimg"> 
+				</div>
+				<div class="row ad_car">
 					<label id="ccol_label" class="adsscar"> Car Prize: </label>   
 					<input type="text" name="cprize" id="cprize"> 
 				</div>

@@ -81,9 +81,9 @@ class Profile_model extends CI_Model{
 	}
 	
 	
-	public function insertUsed($data)
+	public function insertUsed($data, $filename)
 	{	
-		$this->db->insert('carused', $data);
+		$this->db->insert('carused', $data, $filename);
 	}
 
 

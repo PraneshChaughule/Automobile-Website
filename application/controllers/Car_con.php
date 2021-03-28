@@ -47,16 +47,25 @@ class Car_con extends Index_Controller {
 		echo json_encode($carsinfo);
 	}
 	
+	public function logged_in()
+	{
+		$userstatus = $this->input->post('userstatus');
+		$pay = $this->Profile_model->selectData('registration','*',array('status' => $userstatus));
+		echo json_encode($pay);	
+	}
 	/*public function check()
 	{
-		
-		if(isset($status)){ 
-				if($status == 'Active') { 
+		$session = $this->session->userdata('user_session');
+		$data['status'] = 'yes';
+		$data = $this->Profile_model->selectData('registration','*',array('reg_id'));
+		print_r($data); exit();
+		if(isset($session['reg_id'])){ 
+				if($data == 'yes') { 
 					if (isset($_SESSION['success']) && $_SESSION['success'] == true) {
 						echo "Welcome to the member's area, " . $_SESSION['username'] . "!";
 					}
 					else {
-						echo "Please log in first to see this page.";
+						$this->load->view('login');
 					}
 				}
 			}	
