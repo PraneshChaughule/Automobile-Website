@@ -27,7 +27,7 @@
 				</div>
 				<div class="row ad_car">
 					<label id="cmodel_label" class="adsscar"> Car Image: </label>   
-					<input type="file" name="car_image" id="car_image"> 
+					<input type="file" name="car_image" id="car_imag"> 
 				</div>
 				<div class="row ad_car">
 					<label id="ccol_label" class="adsscar"> Car Colour: </label>   
@@ -38,12 +38,8 @@
 					<input type="text" name="edcc" id="edcc"> 
 				</div>
 				<div class="row ad_car">
-					<label id="cmilege_label" class="adsscar"> Milege: </label>   
+					<label id="cmilege_label" class="adsscar"> Fuel Efficiency: </label>   
 					<input type="text" name="cmilege" id="cmilgee"> 
-				</div>
-				<div class="row ad_car">
-					<label id="tcap_label" class="adsscar"> Tank Capacity: </label>   
-					<input type="text" name="tcapacity" id="tcapacity"> 
 				</div>
 				<div class="row ad_car">
 					<label id="ftype_label" class="adsscar"> Fuel Type: </label>   

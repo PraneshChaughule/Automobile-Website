@@ -25,17 +25,17 @@ class Car extends Index_Controller {
 		is_login();
 		$this->user_session=$this->session->userdata('user_session');
 	}
-	/*
+	
 	public function index()
 	{
 		$this->load->view('admin_car');
-	}*/
+	}/*
 	public function index()
 	{
 		$data = $this->session->userdata('user_session');
 		$data['cars'] = $this->Profile_model->selectData('carinfo','*');
 		$this->load->view('home',$data);
-	}
+	}*/
 	
 	
 	
@@ -109,6 +109,8 @@ class Car extends Index_Controller {
 		if (isset($_POST['submit'])) { 
 			// Get all the submitted data from the form 
 			$this->Profile_model->insertInfo($data, $filename);
+			move_uploaded_file($tempname, $folder);
+			// Get all the submitted data from the form
 		} 
 	}  
 	
@@ -117,10 +119,17 @@ class Car extends Index_Controller {
 		$used_id=0;
 		$data = array();
 		$data = $_POST;
-		$data['used_id'] = $used_id;
+		//$data['used_id'] = $used_id;
+		$fname = $_FILES["cimg"]["name"];
+		$tmpname = $_FILES["cimg"]["tmp_name"];
+		$folder = "Used_img/".$fname;
+		if(isset($_POST['submit'])){
+			move_uploaded_file($tmpname, $folder);
+			$this->Profile_model->insertUsed($data, $fname);
+		}
 		//print_r($data); exit();
 		//$this->Profile_model->insertUsed($data);
-		$get_admin_id = $this->Profile_model->insertData('carused',$data);
+		//$get_admin_id = $this->Profile_model->insertData('carused',$data);
 	}
 	
 	public function GetRedirectURL1($reg_id,$bus_id)

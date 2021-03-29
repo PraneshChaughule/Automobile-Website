@@ -131,7 +131,7 @@
 							<li> RTO: <span class="rto"></span></li>
 							<li> Insurance: <span class="insurance"></span></li>
 							<li> On-Road Prize:</li>
-							<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#paymt" action="<?php echo base_url();?>index.php/Car_con/check" style="width:80%;margin-top:15px;"> Buy Now </button>	
+							<button type="button" class="payment" data-bs-toggle="modal" style="width:80%;margin-top:15px;"> Buy Now </button>	
 					</div>
 				</div>
 			  </div>
@@ -204,5 +204,25 @@
            }
        });
 	 }); 
+</script>
+<script>
+	$(document).ready( function(e){
+	$(".payment").on("click",function(){
+        var status = $(this).attr('status');
+				$.ajax({
+					url: base_url+'index.php/Car_con/logged_in',
+					type: "POST",
+					data: {'status':status},
+					success:function(data){
+						if(data == 1){
+							$('#paymt').modal('show');
+						}else{
+							window.location = base_url+'index.php/Signin/user_log';
+						}
+						 
+					},
+				});		
+		});	
+	});		
 </script>
 </html>	
