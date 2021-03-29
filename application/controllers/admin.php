@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
-class admin extends CI_Controller {
+require ("common/Index_Controller.php");
+class admin extends Index_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('regmodel');
@@ -12,3 +12,4 @@ class admin extends CI_Controller {
 	{
 		$this->load->view('admin_car');
 	}
+}
